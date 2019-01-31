@@ -11,6 +11,8 @@ program=$4
 model=$5
 src_path=$6
 build_path=$7
+world=multiTarget6T
+
 
 echo SITL ARGS
 
@@ -99,7 +101,7 @@ then
 			# Set the plugin path so Gazebo finds our model and sim
 			source $src_path/Tools/setup_gazebo.bash ${src_path} ${build_path}
 
-			gzserver --verbose ${src_path}/Tools/sitl_gazebo/worlds/${model}.world &
+			rosrun gazebo_ros gzserver --verbose ${src_path}/Tools/sitl_gazebo/worlds/${world}.xml &
 			SIM_PID=`echo $!`
 
 			if [[ -n "$HEADLESS" ]]; then
