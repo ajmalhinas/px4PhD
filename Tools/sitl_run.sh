@@ -11,7 +11,7 @@ program=$4
 model=$5
 src_path=$6
 build_path=$7
-world=figure1
+world=searchNRescue
 
 
 echo SITL ARGS
